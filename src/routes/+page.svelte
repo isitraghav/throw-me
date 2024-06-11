@@ -17,7 +17,7 @@
 			})
 			.then((res) => {
 				loading = false;
-				toast.text = res.data;
+				toast.text = 'copied ' + res.data;
 				if (res.data !== 'not a valid url') {
 					copy(res.data);
 				} else {
