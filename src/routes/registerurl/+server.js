@@ -14,7 +14,7 @@ export async function POST({ request, url }) {
 			ip: []
 		});
 		if (url.href.replace(/registerurl/g, "") == 'https://throw-me-ten.vercel.app/') {
-			return new Response('https://69x.vercel.app/' + urlrand);
+			return new Response('https://69x.now.sh/' + urlrand);
 		}
 		return new Response(url.href.replace(/registerurl/g, "") + urlrand);
 	} else {
