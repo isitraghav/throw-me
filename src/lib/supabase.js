@@ -2,6 +2,6 @@ import { createClient } from '@supabase/supabase-js';
 import 'dotenv/config';
 
 export const supabase = createClient(
-	'https://goumczrrmtvftadelbms.supabase.co',
+	'https://qwyzbeeyemkqdnxfcmnr.supabase.co',
 	process.env.SUPABASE
 );
