@@ -8,11 +8,17 @@ export async function POST({ request, url }) {
 	if (isUrl(req.url)) {
 		console.log('valid url');
 		let urlrand = nanoid(5);
-		const { data } = await supabase.from('links').insert({
-			name: urlrand,
-			url: req.url,
-			ip: []
-		});
+		try {
+			const { data } = await supabase.from('links').insert({
+				name: urlrand,
+				url: req.url,
+				ip: []
+			});
+		} catch (error) {
+			console.log(error);
+			return new Response('failed to register url');
+		}
+		
 		if (url.href.replace(/registerurl/g, "") == 'https://throw-me-ten.vercel.app/') {
 			return new Response('https://69x.now.sh/' + urlrand);
 		}
